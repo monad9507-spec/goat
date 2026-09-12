@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080a09" />
+    <meta name="description" content="Hash Goat mining, pricing and difficulty rules." />
+    <title>Hash Goat — Docs</title>
+    <link rel="stylesheet" href="./style.css?v=20260913-4" />
+  </head>
+  <body>
+    <div class="pixel-grid" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="goat-brand" href="./index.html"><img class="brand-avatar" src="./hash-goat-character.jpeg" alt="" /><strong>HASHGOAT</strong></a>
+      <nav class="site-nav"><a href="./mine.html">MINE</a><a href="./collection.html">COLLECTION</a><a class="active" href="./docs.html">DOCS</a></nav>
+      <div class="chain-counter"><i></i><span>ROBINHOOD</span><b>10,000 SUPPLY</b></div>
+      <a class="connect-pixel contract-link" id="docsContract" href="#" target="_blank" rel="noreferrer">CONTRACT</a>
+    </header>
+
+    <main class="docs-page">
+      <header class="page-heading"><p>REFERENCE</p><h1>HOW THE HERD<br /><em>IS MINED.</em></h1><span>Everything important is enforced by the Hash Goat smart contract.</span></header>
+      <div class="docs-grid">
+        <aside><a href="#mining">01 / MINING</a><a href="#difficulty">02 / BITS</a><a href="#pricing">03 / PRICE</a><a href="#metadata">04 / IPFS</a><a href="#safety">05 / SAFETY</a></aside>
+        <div>
+          <section id="mining" class="doc-section"><span>01</span><h2>GPU MINING</h2><p>Connect your wallet and run the WebGPU miner. Every SHA-256 attempt is made locally on your graphics card. A valid proof is bound to your wallet and the latest challenge, so another wallet cannot copy it.</p><div class="fact-row"><div><small>ALGORITHM</small><strong>SHA-256</strong></div><div><small>SUPPLY</small><strong>10,000</strong></div><div><small>NETWORK</small><strong>ROBINHOOD</strong></div></div></section>
+          <section id="difficulty" class="doc-section"><span>02</span><h2>DIFFICULTY</h2><p>Difficulty begins at 30 BITS. It retargets after every eight successful mints and can move by only one bit per retarget. During inactivity it falls by one bit every ten seconds until it reaches the current supply floor.</p><div class="difficulty-rules"><div><small>START</small><strong>30 BITS</strong></div><div><small>ABSOLUTE MAX</small><strong>40 BITS</strong></div><div><small>IDLE DECAY</small><strong>−1 / 10 SEC</strong></div><div><small>RETARGET</small><strong>8 MINTS</strong></div></div><p class="doc-note">The floor rises by one bit every 500 mints and stops permanently at 35 BITS. The contract cannot repeat the uncontrolled 50-BIT spike.</p></section>
+          <section id="pricing" class="doc-section"><span>03</span><h2>PRICE CURVE</h2><p>Hash Goats #1–250 are free. Hash Goats #251–500 cost 0.00015 ETH each. The price then adds 0.00015 ETH every 250 mints. If all 10,000 are mined, total primary-sale revenue is 29.25 ETH.</p><div class="price-samples"><div><span>#1–250</span><strong>FREE</strong></div><div><span>#251–500</span><strong>0.00015 ETH</strong></div><div><span>#501–750</span><strong>0.00030 ETH</strong></div><div><span>#9,751–10,000</span><strong>0.00585 ETH</strong></div></div></section>
+          <section id="metadata" class="doc-section"><span>04</span><h2>IPFS METADATA</h2><p>Each token points to an immutable-style IPFS path ending in its token number and <code>.json</code>. The owner may correct the base URI before it is permanently frozen. Royalty is fixed at 5% in the collection contract.</p></section>
+          <section id="safety" class="doc-section"><span>05</span><h2>STAY SAFE</h2><p>The website never asks for your seed phrase or private key. Mining only computes hashes until a proof is found; minting happens only after you confirm a contract transaction in your wallet. TURBO mode uses more power and may increase GPU temperature.</p></section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer"><div><strong>♑ HASHGOAT</strong><p>Proof-of-work collectibles on Robinhood Chain.</p></div><div><a href="./mine.html">MINE</a><a href="./collection.html">COLLECTION</a><a href="./docs.html">DIFFICULTY RULES</a></div></footer>
+    <script src="./config.js"></script>
+    <script>const c=window.HASH_BROKER_CONFIG;document.getElementById('docsContract').href=c.DEMO_MODE?c.EXPLORER_URL:c.EXPLORER_URL+'/address/'+c.CONTRACT_ADDRESS;</script>
+  </body>
+</html>

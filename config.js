@@ -1,0 +1,15 @@
+window.HASH_BROKER_CONFIG = Object.freeze({
+  WALLETCONNECT_PROJECT_ID: "4f71172824a0ea69b0270161482356fe",
+  CONTRACT_ADDRESS: "0x0000000000000000000000000000000000000000",
+  DEMO_MODE: true,
+  CHAIN_ID_DECIMAL: 4663,
+  CHAIN_ID_HEX: "0x1237",
+  CHAIN_NAME: "Robinhood Chain",
+  RPC_URL: "https://rpc.mainnet.chain.robinhood.com/",
+  EXPLORER_URL: "https://robinhoodchain.blockscout.com",
+  IPFS_GATEWAY: "https://ipfs2.seadn.io/ipfs/",
+  MAX_SUPPLY: 10000,
+  MINT_PRICE_WEI: "0",
+  MINT_PRICE_LABEL: "FREE",
+  METADATA_BASE_URI: "ipfs://bafybeifgr2boq7ih6gfo4yczfrf53grhexe4l2spnlie42tfoeuakkamqi/"
+});

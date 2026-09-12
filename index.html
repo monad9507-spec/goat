@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080a09" />
+    <meta name="description" content="Hash Goat — GPU-mined pixel goats on Robinhood Chain." />
+    <title>Hash Goat — You Mine One</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23080a09'/%3E%3Cpath d='M7 8l5 4h8l5-4-2 8v9H9v-9z' fill='%23a8d95b'/%3E%3Cpath d='M12 17h3v3h-3zm6 0h3v3h-3zm-3 5h3v2h-3z' fill='%2303090d'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./style.css?v=20260913-4" />
+  </head>
+  <body>
+    <div class="pixel-grid" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="goat-brand" href="./index.html" aria-label="Hash Goat home"><img class="brand-avatar" src="./hash-goat-character.jpeg" alt="" /><strong>HASHGOAT</strong></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="./mine.html">MINE</a>
+        <a href="./collection.html">COLLECTION</a>
+        <a href="./docs.html">DOCS</a>
+      </nav>
+      <div class="chain-counter"><i></i><span id="headerChain">ROBINHOOD</span><b><span id="headerMined">0</span> MINED</b></div>
+      <button class="connect-pixel" id="connectButton" type="button">CONNECT</button>
+    </header>
+
+    <main class="landing-main">
+      <section class="hero-copy">
+        <p class="hero-kicker">10,000 GPU-DISCOVERED GOATS</p>
+        <h1>YOU CAN'T BUY<br />A HASH GOAT.<br /><em>YOU MINE ONE.</em></h1>
+        <p class="hero-text">Pixel goats born from proof of work on Robinhood Chain. Your browser searches for a SHA-256 hash below the network target. Find it, confirm it, own the goat.</p>
+        <div class="hero-actions">
+          <a class="pixel-button primary" href="./mine.html"><span>⛏</span> START MINING</a>
+          <a class="pixel-button secondary" href="./collection.html">SEE COLLECTION</a>
+        </div>
+        <div class="supply-progress">
+          <div class="progress-label"><strong>MINED SO FAR</strong><span><b id="homeMined">0</b> / 10,000</span></div>
+          <div class="pixel-progress"><i id="homeProgress"></i></div>
+        </div>
+        <div class="hero-stats">
+          <div><span>DIFFICULTY NOW</span><strong id="homeDifficulty">30 BITS</strong></div>
+          <div><span>HASHES PER GOAT</span><strong id="homeHashes">1.07B</strong></div>
+          <div><span>ENTRY PRICE</span><strong id="homePrice">FREE</strong></div>
+          <div><span>PRICE EPOCH</span><strong id="homeEpoch">0</strong></div>
+        </div>
+      </section>
+
+      <aside class="last-card" aria-label="Latest Hash Goat">
+        <div class="card-bar"><strong>LAST MINED</strong><span id="lastTime">WAITING</span></div>
+        <div class="goat-art-wrap">
+          <img id="lastGoatImage" alt="Latest Hash Goat" hidden />
+          <img id="goatPlaceholder" src="./hash-goat-character.jpeg" alt="Hash Goat pixel character" />
+        </div>
+        <div class="trait-ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="last-meta"><strong id="lastGoatName">HASH GOAT #—</strong><span><b id="lastBits">30</b> BITS</span></div>
+      </aside>
+    </main>
+
+    <section class="rule-strip">
+      <article><span>01</span><strong>PROVE</strong><p>Search hashes locally with WebGPU.</p></article>
+      <article><span>02</span><strong>DISCOVER</strong><p>A valid proof unlocks one mint.</p></article>
+      <article><span>03</span><strong>OWN</strong><p>Your goat arrives directly in your wallet.</p></article>
+    </section>
+
+    <footer class="site-footer"><div><strong>♑ HASHGOAT</strong><p>Proof-of-work collectibles on Robinhood Chain.</p></div><div><a href="./mine.html">MINE</a><a href="./collection.html">COLLECTION</a><a href="./docs.html">DIFFICULTY RULES</a></div></footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="./config.js"></script>
+    <script type="module" src="./wallet-appkit.js"></script>
+    <script type="module" src="./home.js?v=20260913-4"></script>
+  </body>
+</html>

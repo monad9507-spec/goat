@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080a09" />
+    <meta name="description" content="Browse every mined Hash Goat." />
+    <title>Hash Goat — Collection</title>
+    <link rel="stylesheet" href="./style.css?v=20260913-4" />
+  </head>
+  <body>
+    <div class="pixel-grid" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="goat-brand" href="./index.html"><img class="brand-avatar" src="./hash-goat-character.jpeg" alt="" /><strong>HASHGOAT</strong></a>
+      <nav class="site-nav"><a href="./mine.html">MINE</a><a class="active" href="./collection.html">COLLECTION</a><a href="./docs.html">DOCS</a></nav>
+      <div class="chain-counter"><i></i><span>ROBINHOOD</span><b><span id="headerMined">0</span> MINED</b></div>
+      <button class="connect-pixel" id="connectButton" type="button">CONNECT</button>
+    </header>
+
+    <main class="collection-main">
+      <header class="page-heading"><p>THE HERD</p><h1>EVERY GOAT<br /><em>DISCOVERED.</em></h1><span>New Hash Goats appear here directly from IPFS after a successful proof-of-work mint.</span></header>
+      <div class="collection-toolbar"><div><i></i><strong id="collectionStatus">PREVIEW MODE</strong></div><span id="collectionCount">0 / 10,000</span></div>
+      <section class="goat-grid" id="goatGrid" aria-live="polite"></section>
+      <button class="pixel-button primary load-more" id="loadMore" type="button" hidden>LOAD MORE</button>
+    </main>
+
+    <footer class="site-footer"><div><strong>♑ HASHGOAT</strong><p>Proof-of-work collectibles on Robinhood Chain.</p></div><div><a href="./mine.html">MINE</a><a href="./collection.html">COLLECTION</a><a href="./docs.html">DIFFICULTY RULES</a></div></footer>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="./config.js"></script>
+    <script type="module" src="./wallet-appkit.js"></script>
+    <script type="module" src="./collection.js?v=20260913-4"></script>
+  </body>
+</html>
