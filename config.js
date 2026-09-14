@@ -11,5 +11,8 @@ window.HASH_BROKER_CONFIG = Object.freeze({
   MAX_SUPPLY: 10000,
   MINT_PRICE_WEI: "0",
   MINT_PRICE_LABEL: "FREE",
-  METADATA_BASE_URI: "ipfs://bafybeifgr2boq7ih6gfo4yczfrf53grhexe4l2spnlie42tfoeuakkamqi/"
+  METADATA_BASE_URI: "ipfs://bafybeifgr2boq7ih6gfo4yczfrf53grhexe4l2spnlie42tfoeuakkamqi/",
+  // Replace these two links when your official profiles are ready.
+  X_LINK: "https://x.com/",
+  OPENSEA_LINK: "https://opensea.io/"
 });

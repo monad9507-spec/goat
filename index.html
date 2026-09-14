@@ -7,7 +7,8 @@
     <meta name="description" content="Hash Goat — GPU-mined pixel goats on Robinhood Chain." />
     <title>Hash Goat — You Mine One</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23080a09'/%3E%3Cpath d='M7 8l5 4h8l5-4-2 8v9H9v-9z' fill='%23a8d95b'/%3E%3Cpath d='M12 17h3v3h-3zm6 0h3v3h-3zm-3 5h3v2h-3z' fill='%2303090d'/%3E%3C/svg%3E" />
-    <link rel="stylesheet" href="./style.css?v=20260913-4" />
+    <link rel="preload" href="./pixel-goat.woff?v=4" as="font" type="font/woff" crossorigin />
+    <link rel="stylesheet" href="./style.css?v=20260914-herd" />
   </head>
   <body>
     <div class="pixel-grid" aria-hidden="true"></div>
@@ -17,6 +18,8 @@
         <a href="./mine.html">MINE</a>
         <a href="./collection.html">COLLECTION</a>
         <a href="./docs.html">DOCS</a>
+        <a class="social-link" data-social="x" href="https://x.com/" target="_blank" rel="noreferrer">X ↗</a>
+        <a class="social-link" data-social="opensea" href="https://opensea.io/" target="_blank" rel="noreferrer">OS ↗</a>
       </nav>
       <div class="chain-counter"><i></i><span id="headerChain">ROBINHOOD</span><b><span id="headerMined">0</span> MINED</b></div>
       <button class="connect-pixel" id="connectButton" type="button">CONNECT</button>
@@ -54,16 +57,45 @@
       </aside>
     </main>
 
+    <section class="herd-preview" aria-labelledby="herdPreviewTitle">
+      <div class="herd-preview-heading">
+        <div>
+          <span class="herd-eyebrow">THE COLLECTION / FIRST SIGNALS</span>
+          <h2 id="herdPreviewTitle">MEET THE<br /><em>HERD.</em></h2>
+        </div>
+        <a class="herd-link" href="./collection.html">VIEW COLLECTION ↗</a>
+      </div>
+      <div class="herd-gallery">
+        <a class="herd-frame" href="./collection.html">
+          <img src="./hash-goat-herd-01.jpeg" alt="Hash Goat pixel artwork with a red glitch background" loading="lazy" />
+          <span><b>SAMPLE 01</b><small>GLITCH SIGNAL</small></span>
+        </a>
+        <a class="herd-frame" href="./collection.html">
+          <img src="./hash-goat-herd-02.jpeg" alt="Hash Goat pixel artwork with a crown and blue glasses" loading="lazy" />
+          <span><b>SAMPLE 02</b><small>ROYAL SIGNAL</small></span>
+        </a>
+        <a class="herd-frame" href="./collection.html">
+          <img src="./hash-goat-herd-03.jpeg" alt="Hash Goat pixel artwork with a crown and 3D glasses" loading="lazy" />
+          <span><b>SAMPLE 03</b><small>VISION SIGNAL</small></span>
+        </a>
+        <a class="herd-frame" href="./collection.html">
+          <img src="./hash-goat-herd-04.jpeg" alt="Hash Goat pixel artwork in a black cap" loading="lazy" />
+          <span><b>SAMPLE 04</b><small>SHADOW SIGNAL</small></span>
+        </a>
+      </div>
+    </section>
+
     <section class="rule-strip">
       <article><span>01</span><strong>PROVE</strong><p>Search hashes locally with WebGPU.</p></article>
       <article><span>02</span><strong>DISCOVER</strong><p>A valid proof unlocks one mint.</p></article>
       <article><span>03</span><strong>OWN</strong><p>Your goat arrives directly in your wallet.</p></article>
     </section>
 
-    <footer class="site-footer"><div><strong>♑ HASHGOAT</strong><p>Proof-of-work collectibles on Robinhood Chain.</p></div><div><a href="./mine.html">MINE</a><a href="./collection.html">COLLECTION</a><a href="./docs.html">DIFFICULTY RULES</a></div></footer>
+    <footer class="site-footer"><div><strong>HG / HASHGOAT</strong><p>Proof-of-work collectibles on Robinhood Chain.</p></div><div><a href="./mine.html">MINE</a><a href="./collection.html">COLLECTION</a><a href="./docs.html">DIFFICULTY RULES</a><a data-social="x" href="https://x.com/" target="_blank" rel="noreferrer">X ↗</a><a data-social="opensea" href="https://opensea.io/" target="_blank" rel="noreferrer">OPEN SEA ↗</a></div></footer>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="./config.js"></script>
+    <script src="./social-links.js"></script>
     <script type="module" src="./wallet-appkit.js"></script>
     <script type="module" src="./home.js?v=20260913-4"></script>
   </body>

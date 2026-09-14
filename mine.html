@@ -7,7 +7,8 @@
     <meta name="description" content="Mine Hash Goat — 10,000 IPFS-backed proof-of-work goats on Robinhood Chain." />
     <title>Hash Goat — GPU Mine</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2305080d'/%3E%3Cpath d='M7 8l5 4h8l5-4-2 8v9H9v-9z' fill='%2327e0c1'/%3E%3Cpath d='M12 17h3v3h-3zm6 0h3v3h-3zm-3 5h3v2h-3z' fill='%2303090d'/%3E%3C/svg%3E" />
-    <link rel="stylesheet" href="./style.css?v=20260913-4" />
+    <link rel="preload" href="./pixel-goat.woff?v=4" as="font" type="font/woff" crossorigin />
+    <link rel="stylesheet" href="./style.css?v=20260914-11" />
   </head>
   <body>
     <div class="pixel-grid" aria-hidden="true"></div>
@@ -21,6 +22,8 @@
         <a href="./collection.html">COLLECTION</a>
         <a href="./docs.html">DOCS</a>
         <a id="explorerLink" href="#" target="_blank" rel="noreferrer">CONTRACT</a>
+        <a class="social-link" data-social="x" href="https://x.com/" target="_blank" rel="noreferrer">X ↗</a>
+        <a class="social-link" data-social="opensea" href="https://opensea.io/" target="_blank" rel="noreferrer">OS ↗</a>
       </nav>
       <button class="wallet-button" id="connectButton" type="button">CONNECT WALLET</button>
     </header>
@@ -32,73 +35,43 @@
         <div>PRICE <strong id="mintPriceTop">FREE</strong></div>
       </section>
 
-      <section class="forge-shell" id="miner">
-        <header class="forge-header">
-          <div><small>HASH GOAT LABS</small><strong>PROOF FORGE / UNIT 01</strong></div>
-          <div class="forge-state"><i aria-hidden="true"></i><span id="runState">IDLE</span></div>
+      <section class="hunt-deck" id="miner">
+        <header class="hunt-heading">
+          <div><span class="hunt-overline">HASH GOAT / FIELD OPERATIONS</span><h1>GOAT HUNT <em>01</em></h1></div>
+          <div class="hunt-status"><i></i><span id="runState">STANDBY</span><small>LOCAL COMPUTE</small></div>
         </header>
 
-        <div class="forge-grid">
-          <aside class="forge-avatar" aria-label="Hash Goat signal">
-            <div class="goat-viewport" id="portrait">
-              <img src="./hash-goat-character.jpeg" alt="Pixel Hash Goat character" />
-              <span class="scanner" aria-hidden="true"></span>
-              <span class="corner corner-a" aria-hidden="true"></span>
-              <span class="corner corner-b" aria-hidden="true"></span>
-            </div>
-            <div class="goat-signal">
-              <span>NEXT DISCOVERY</span>
-              <strong id="candidateBits">0 / 30 BITS</strong>
-            </div>
+        <div class="hunt-layout">
+          <aside class="identity-card" aria-label="Hash Goat identity">
+            <div class="identity-top"><span>SUBJECT / HG-0001</span><b>UNCLAIMED</b></div>
+            <div class="identity-art" id="portrait"><img src="./hash-goat-character.jpeg" alt="Pixel Hash Goat character" /><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span></div>
+            <div class="identity-bottom"><span>THE HERD IS WAITING</span><strong id="candidateBits">0 / 30 BITS</strong></div>
           </aside>
 
-          <section class="forge-workspace" aria-label="Live proof search">
-            <div class="forge-title">
-              <span>LIVE PROOF SEARCH</span>
-              <small>SHA-256 / WALLET-BOUND</small>
-            </div>
-
-            <div class="proof-display">
-              <div class="proof-heading"><span>BEST SIGNAL</span><strong id="bestBits">0 / 30 BITS</strong></div>
-              <code id="bestHash">0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</code>
-              <div class="bit-meter forge-meter" id="bitMeter" aria-label="Leading zero bits"></div>
-            </div>
-
-            <div class="target-display">
-              <div class="proof-heading"><span>NETWORK THRESHOLD</span><strong id="targetBits">30 LEADING ZERO BITS</strong></div>
-              <div class="target-meter forge-target" id="targetMeter"></div>
-            </div>
-
-            <div class="forge-metrics">
-              <div><span>LIVE SPEED</span><strong id="hashrate">0 H/s</strong></div>
-              <div><span>ATTEMPTS</span><strong id="hashesTried">0</strong></div>
-              <div><span>AVG. DISCOVERY</span><strong id="expectedWait">—</strong></div>
-              <div><span>CHANCE / MIN</span><strong id="chanceMinute">—</strong></div>
-            </div>
-
-            <div class="forge-log" id="terminalLog" aria-live="polite"><span>●</span> Connect a wallet or test this GPU in benchmark mode.</div>
+          <section class="discovery-core" aria-label="Hash Goat discovery progress">
+            <div class="core-label"><span>DISCOVERY CORE</span><small>SHA-256 / WALLET-BOUND</small></div>
+            <div class="core-number"><span id="bestBits">0 / 30 BITS</span><strong id="targetBits">30 LEADING ZERO BITS</strong></div>
+            <div class="core-ring"><div class="ring-track"></div><div class="ring-spark"></div><span>SEARCHING<br /><b>FOR PROOF</b></span></div>
+            <code id="bestHash">0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</code>
+            <div class="signal-meter"><div class="meter-caption"><span>PROOF STRENGTH</span><b id="meterReadout">0%</b></div><div class="bit-meter" id="bitMeter" aria-label="Leading zero bits"></div><div class="target-meter" id="targetMeter" aria-hidden="true"></div></div>
+            <div class="discovery-note" id="terminalLog" aria-live="polite"><span>READY</span> Connect a wallet or run a benchmark to begin the hunt.</div>
           </section>
 
-          <aside class="forge-controls" aria-label="Mining controls">
-            <div class="control-title"><span>ENGINE CONTROL</span><b>HG-01</b></div>
-            <div class="control-card">
-              <span>MACHINE</span>
-              <strong>WEBGPU V2</strong>
-            </div>
-            <div class="control-card gpu-name">
-              <span>GRAPHICS CARD</span>
-              <strong id="gpuName">NOT DETECTED</strong>
-            </div>
-            <div class="power-selector">
-              <span>POWER PROFILE</span>
-              <div class="mode-buttons" role="group" aria-label="GPU mining power">
-                <button class="mode-button active" id="normalMode" type="button" aria-pressed="true">NORMAL</button>
-                <button class="mode-button" id="turboMode" type="button" aria-pressed="false">TURBO</button>
-              </div>
-            </div>
-            <button class="mine-button forge-button" id="mineButton" type="button">TEST GPU</button>
-            <p>Mining runs locally in your browser. A transaction opens only after a valid proof is found.</p>
+          <aside class="mission-card" aria-label="Mining controls">
+            <div class="mission-number">MISSION <strong>01</strong></div>
+            <div class="mission-row"><span>ENGINE</span><strong>WEBGPU V2</strong></div>
+            <div class="mission-row"><span>GRAPHICS CARD</span><strong id="gpuName">NOT DETECTED</strong></div>
+            <div class="mission-row"><span>POWER PROFILE</span><div class="mode-buttons" role="group" aria-label="GPU mining power"><button class="mode-button active" id="normalMode" type="button" aria-pressed="true">NORMAL</button><button class="mode-button" id="turboMode" type="button" aria-pressed="false">TURBO</button></div></div>
+            <button class="mission-launch" id="mineButton" type="button"><span>BEGIN HUNT</span><b>↗</b></button>
+            <p>All computation stays in your browser. A transaction appears only when your proof is valid.</p>
           </aside>
+        </div>
+
+        <div class="hunt-readings" aria-label="Live mining readings">
+          <div><span>HASH RATE</span><strong id="hashrate">0 H/s</strong><small>LIVE</small></div>
+          <div><span>ATTEMPTS</span><strong id="hashesTried">0</strong><small>SEARCHED</small></div>
+          <div><span>AVG. DISCOVERY</span><strong id="expectedWait">—</strong><small>ESTIMATE</small></div>
+          <div><span>CHANCE / MIN</span><strong id="chanceMinute">—</strong><small>PROBABILITY</small></div>
         </div>
       </section>
 
@@ -113,14 +86,15 @@
         <div><p class="eyebrow">THE PROTOCOL</p><h1>YOU DON'T BUY A GOAT.<br /><span>YOU DISCOVER ONE.</span></h1></div>
         <div class="protocol-copy">
           <p>Your GPU searches for a SHA-256 proof tied to your wallet and the latest on-chain challenge. When the hash beats the current target, the contract verifies it and mints your Hash Goat.</p>
-          <p>The first 250 goats are free. Afterwards, the price rises by 0.00015 ETH every 250 mints. Artwork and metadata are stored on IPFS.</p>
+          <p>The first 500 goats are free. Afterwards, the price rises by 0.0001 ETH every 500 mints. Artwork and metadata are stored on IPFS.</p>
         </div>
       </section>
     </main>
 
-    <footer><span>♑ HASHGOAT © 2026</span><span>PROOF OF WORK · PROOF OF OWNERSHIP</span></footer>
+    <footer><span>HG / HASHGOAT © 2026</span><span>PROOF OF WORK · PROOF OF OWNERSHIP · <a data-social="x" href="https://x.com/" target="_blank" rel="noreferrer">X</a> · <a data-social="opensea" href="https://opensea.io/" target="_blank" rel="noreferrer">OPEN SEA</a></span></footer>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="./config.js"></script>
+    <script src="./social-links.js"></script>
     <script type="module" src="./wallet-appkit.js"></script>
     <script type="module" src="./app.js?v=20260913-4"></script>
   </body>

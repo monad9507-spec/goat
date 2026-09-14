@@ -6,13 +6,14 @@
     <meta name="theme-color" content="#080a09" />
     <meta name="description" content="Browse every mined Hash Goat." />
     <title>Hash Goat — Collection</title>
-    <link rel="stylesheet" href="./style.css?v=20260913-4" />
+    <link rel="preload" href="./pixel-goat.woff?v=4" as="font" type="font/woff" crossorigin />
+    <link rel="stylesheet" href="./style.css?v=20260913-10" />
   </head>
   <body>
     <div class="pixel-grid" aria-hidden="true"></div>
     <header class="site-header">
       <a class="goat-brand" href="./index.html"><img class="brand-avatar" src="./hash-goat-character.jpeg" alt="" /><strong>HASHGOAT</strong></a>
-      <nav class="site-nav"><a href="./mine.html">MINE</a><a class="active" href="./collection.html">COLLECTION</a><a href="./docs.html">DOCS</a></nav>
+      <nav class="site-nav"><a href="./mine.html">MINE</a><a class="active" href="./collection.html">COLLECTION</a><a href="./docs.html">DOCS</a><a class="social-link" data-social="x" href="https://x.com/" target="_blank" rel="noreferrer">X ↗</a><a class="social-link" data-social="opensea" href="https://opensea.io/" target="_blank" rel="noreferrer">OS ↗</a></nav>
       <div class="chain-counter"><i></i><span>ROBINHOOD</span><b><span id="headerMined">0</span> MINED</b></div>
       <button class="connect-pixel" id="connectButton" type="button">CONNECT</button>
     </header>
@@ -24,9 +25,10 @@
       <button class="pixel-button primary load-more" id="loadMore" type="button" hidden>LOAD MORE</button>
     </main>
 
-    <footer class="site-footer"><div><strong>♑ HASHGOAT</strong><p>Proof-of-work collectibles on Robinhood Chain.</p></div><div><a href="./mine.html">MINE</a><a href="./collection.html">COLLECTION</a><a href="./docs.html">DIFFICULTY RULES</a></div></footer>
+    <footer class="site-footer"><div><strong>HG / HASHGOAT</strong><p>Proof-of-work collectibles on Robinhood Chain.</p></div><div><a href="./mine.html">MINE</a><a href="./collection.html">COLLECTION</a><a href="./docs.html">DIFFICULTY RULES</a><a data-social="x" href="https://x.com/" target="_blank" rel="noreferrer">X ↗</a><a data-social="opensea" href="https://opensea.io/" target="_blank" rel="noreferrer">OPEN SEA ↗</a></div></footer>
     <div class="toast" id="toast" role="status"></div>
     <script src="./config.js"></script>
+    <script src="./social-links.js"></script>
     <script type="module" src="./wallet-appkit.js"></script>
     <script type="module" src="./collection.js?v=20260913-4"></script>
   </body>

@@ -65,6 +65,8 @@ function paintMeters(best, target) {
     node.classList.toggle("on", index < target);
     node.style.opacity = index < target ? "1" : ".16";
   });
+  const readout = $("meterReadout");
+  if (readout) readout.textContent = `${Math.min(100, Math.round((best / Math.max(1, target)) * 100))}%`;
 }
 
 function setLog(message) {

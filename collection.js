@@ -27,7 +27,7 @@ async function rpc(method, params = []) {
 function previewCard(index) {
   const card = document.createElement("article");
   card.className = "goat-card preview-card";
-  card.innerHTML = `<div class="preview-goat tone-${index % 6}"><span>♑</span></div><div><strong>HASH GOAT #—</strong><span>WAITING FOR PROOF</span></div>`;
+  card.innerHTML = `<div class="preview-goat tone-${index % 6}"><img src="./hash-goat-character.jpeg" alt="Unmined Hash Goat preview" /><span>UNMINED / ${String(index + 1).padStart(2, "0")}</span></div><div><strong>HASH GOAT #—</strong><span>WAITING FOR PROOF</span></div>`;
   return card;
 }
 
